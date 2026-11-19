@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: #080a0f;
+    color: #e2e8f0;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Reference Studio 5-Card Rounded Dockview Theme */
+.dockview-theme-abyss,
+.dockview-theme-dark {
+  --dv-background-color: #080a0f;
+  --dv-group-view-background-color: #121622;
+  --dv-tabs-and-actions-container-background-color: #131826;
+  --dv-activegroup-visiblepanel-tab-background-color: #131826;
+  --dv-activegroup-hiddenpanel-tab-background-color: #101420;
+  --dv-inactivegroup-visiblepanel-tab-background-color: #131826;
+  --dv-inactivegroup-hiddenpanel-tab-background-color: #101420;
+  --dv-tab-divider-color: transparent;
+  --dv-activegroup-visiblepanel-tab-color: #f1f5f9;
+  --dv-activegroup-hiddenpanel-tab-color: #94a3b8;
+  --dv-inactivegroup-visiblepanel-tab-color: #e2e8f0;
+  --dv-inactivegroup-hiddenpanel-tab-color: #64748b;
+  --dv-separator-border: transparent;
+  --dv-paneview-header-border-color: rgba(255, 255, 255, 0.05);
+  --dv-tabs-container-scrollbar-color: #272d3a;
+  --dv-drag-over-background-color: rgba(20, 184, 166, 0.14);
+  --dv-drag-over-border-color: #14b8a6;
+  --dv-tabs-and-actions-container-height: 34px;
+  --dv-tab-font-size: 13px;
+}
+
+.dv-dockview {
+  background-color: #080a0f !important;
+  padding: 5px;
+}
+
+.dv-groupview {
+  width: calc(100% - 8px) !important;
+  height: calc(100% - 8px) !important;
+  margin: 4px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(114, 130, 210, 0.24) !important;
+  background-color: #121622 !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.dv-groupview.dv-active-group {
+  border-color: rgba(94, 155, 235, 0.34) !important;
+}
+
+.dv-tabs-and-actions-container {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding: 0 4px;
+}
+
+.dv-tab {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  padding: 0 10px !important;
+  background: transparent !important;
+}
+
+.dv-active-tab {
+  box-shadow: none !important;
+}
+
+.dv-sash {
+  background: transparent !important;
+}
+
+.dv-sash:hover {
+  background: rgba(20, 184, 166, 0.25) !important;
+}
+
+/* Hide default close buttons on studio dock tabs */
+.dv-default-tab-action {
+  display: none !important;
+}
+
+/* Custom Cyan Range Slider */
+input[type='range'].studio-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 9999px;
+  background: #242b3d;
+  outline: none;
+}
+
+input[type='range'].studio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  background: #22d3ee;
+  border: 2px solid #0b0f19;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(34, 211, 238, 0.55);
+}
+
+input[type='range'].studio-slider::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  background: #22d3ee;
+  border: 2px solid #0b0f19;
+  cursor: pointer;
+}
+
+/* Subtle custom scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.38);
+}
